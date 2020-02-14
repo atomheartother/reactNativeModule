@@ -1,13 +1,7 @@
-/**
- * Sample React Native App with Firebase
- * https://github.com/invertase/react-native-firebase
- *
- * @format
- * @flow
- */
-
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {
+  Platform, StyleSheet, Text, View,
+} from 'react-native';
 
 import firebase from '@react-native-firebase/app';
 
@@ -28,25 +22,6 @@ const firebaseCredentials = Platform.select({
   android: 'https://invertase.link/firebase-android',
 });
 
-type Props = {};
-
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native + Firebase!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        {!firebase.apps.length && (
-          <Text style={styles.instructions}>
-            {`\nYou currently have no Firebase apps registered, this most likely means you've not downloaded your project credentials. Visit the link below to learn more. \n\n ${firebaseCredentials}`}
-          </Text>
-        )}
-      </View>
-    );
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -65,3 +40,16 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+export default () => (
+  <View style={styles.container}>
+    <Text style={styles.welcome}>Welcome to React Native + Firebase!</Text>
+    <Text style={styles.instructions}>To get started, edit App.js</Text>
+    <Text style={styles.instructions}>{instructions}</Text>
+    {!firebase.apps.length && (
+    <Text style={styles.instructions}>
+      {`\nYou currently have no Firebase apps registered, this most likely means you've not downloaded your project credentials. Visit the link below to learn more. \n\n ${firebaseCredentials}`}
+    </Text>
+    )}
+  </View>
+);
