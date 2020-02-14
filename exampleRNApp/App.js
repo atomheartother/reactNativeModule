@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default () => (
+const App = () => (
   <View style={styles.container}>
     <Text style={styles.welcome}>Welcome to React Native + Firebase!</Text>
     <Text style={styles.instructions}>To get started, edit App.js</Text>
@@ -53,3 +53,5 @@ export default () => (
     )}
   </View>
 );
+
+export default App;
