@@ -1,7 +1,4 @@
 {
-  "expo": {
-    "sdkVersion": "26.0.0"
-  },
-  "name": "myApp",
-  "displayName": "myApp"
+  "name": "exampleRNApp",
+  "displayName": "exampleRNApp"
 }
